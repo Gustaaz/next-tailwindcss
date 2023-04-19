@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import InputField from "@/components/InputField";
+import Image from "next/image";
+import { Lock } from "lucide-react";
 
 const loginSchema = z.object({
   email: z
@@ -29,7 +31,17 @@ export default function Home() {
 
   return (
     <div className="h-screen flex flex-col">
-      <main className="flex flex-1 justify-center items-center">
+      <main className="flex flex-col flex-1 justify-center items-center m-5 gap-4">
+        <div className="flex flex-col justify-center items-center gap-4">
+          <div className="bg-emerald-500 rounded-full w-12 h-12 flex items-center justify-center">
+            <Lock color="white" />
+          </div>
+          <div className="flex items-center gap-1">
+            <strong>e-Vista-Sede</strong>
+            <div className="border-r border-gray-400 h-8" />
+            <p className="text-gray-500">Login</p>
+          </div>
+        </div>
         <form
           onSubmit={handleSubmit(singIn)}
           className="space-y-4 flex flex-col w-full max-w-sm"
