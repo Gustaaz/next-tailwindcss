@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import InputField from "@/components/InputField";
-import Image from "next/image";
 import { Lock } from "lucide-react";
 
 const loginSchema = z.object({
